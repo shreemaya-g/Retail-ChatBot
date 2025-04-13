@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Chatbot Website</title>
+  <title>Electronic Store Chatbot</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <h1>Welcome to My Chatbot</h1>
+  <h1>Ask Us - Your Store Assistant</h1>
   <div id="webchat" role="main"></div>
   <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
   <script>
+    const store = window.WebChat.createStore({}, ({ dispatch }) => next => action => {
+      if (action.type === 'DIRECT_LINE/CONNECT_FULFILLED') {
+        dispatch({
+          type: 'WEB_CHAT/SEND_MESSAGE',
+          payload: { text: 'Welcome to our Electronics Store! How can I help you today?' }
+        });
+      }
+      return next(action);
+    });
     window.WebChat.renderWebChat(
       {
         directLine: window.WebChat.createDirectLine({
