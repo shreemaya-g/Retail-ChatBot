@@ -1,10 +1,25 @@
 #webchat {
   height: 500px;
   width: 400px;
-  border: 1px solid #ccc;
-  margin: 10px auto;
+  margin: 20px auto;
+  border: 2px solid #6F42C1; /* Purple border */
+  border-radius: 15px;
+  background-color: #F5F5F5; /* Light gray background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
+
 h1 {
   text-align: center;
   font-family: Arial, sans-serif;
+  color: #0078D4; /* Bright blue */
+}
+
+/* Customize send button hover */
+button[data-testid="send-button"] {
+  background-color: #DC3545 !important; /* Red */
+  border-radius: 50%;
+}
+
+button[data-testid="send-button"]:hover {
+  background-color: #C82333 !important; /* Darker red */
 }
