@@ -1,8 +1,8 @@
 #webchat {
-  height: 500px;
-  width: 400px;
+  height: 700px;
+  width: 580px;
   margin: 20px auto;
-  border: 2px solid #6F42C1; /* Purple border */
+  border: 3px solid #6F42C1; /* Purple border */
   border-radius: 15px;
   background-color: #F5F5F5; /* Light gray background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
