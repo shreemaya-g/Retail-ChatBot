@@ -3,23 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to our Store </title>
-  <link rel="stylesheet" href="styles.css"> <!-- Optional -->
+  <title>My Chatbot Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <h1>Ask us - Your Assistant</h1>
+  <h1>Welcome to My Chatbot</h1>
   <div id="webchat" role="main"></div>
   <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
   <script>
-    // Token will go here
     window.WebChat.renderWebChat(
       {
         directLine: window.WebChat.createDirectLine({
-          token: 'eyJhbGciOiJSUzI1NiIsImtpZCI6Im80UUVQWFp4Yk40eXN2a2xpby1PdTVkZFJaWSIsIng1dCI6Im80UUVQWFp4Yk40eXN2a2xpby1PdTVkZFJaWSIsInR5cCI6IkpXVCJ9.eyJib3QiOiJDTFUtUU5BLWJvdCIsInNpdGUiOiJERTMxa3ZHMWhoTUx5RGwxQTlUaUJwU1NOYjZUOHdiaVZlWEV4UExpZEpIWDFoVmlJYXhhSlFRSjk5QkRBQ0w5M05hQUFyb2hBQUFCQVpCUzRVRU0iLCJjb252IjoiRFJKUXh0dkNxRDM5aFRRRFp3alBtaC1pbiIsIm5iZiI6MTc0NDUxOTQ2MywiZXhwIjoxNzQ0NTIzMDYzLCJpc3MiOiJodHRwczovL3dlYmNoYXQuYm90ZnJhbWV3b3JrLmNvbS8iLCJhdWQiOiJodHRwczovL3dlYmNoYXQuYm90ZnJhbWV3b3JrLmNvbS8ifQ.0BRsROIl6UANrhSaagY6ycHnJDCq6ldLqECIhHppQdb7qibbz34GHlRe_RTp3ARENdv5Ms9lbRZFI4n-H0XlQWZ3yY9V3GjdwNXPRNgqSnCUnyx47JzbgVnPum02DP5MPfs_-oJEIBYqh4VDIvtQ7slrw8vtwnjjUfPa6YVWnnaxwJV2_hbgspe0Ls0Yu2Z1LRSWazvTbDW8MkPLTuuqgQyFZgV9FOhxaxJwb-3OEYyUQZhsLm2RZ1IT1FK21WCtRllDZHMN7rDOUhpR0ozaQskrnyPB0PcZItjekagn4KzTL9jxYhzhA3MdzXmpvMMqHZRiQC9gwlTtisFNnqE3Gw' // Replace with your token
+          token: 'eyJhbGciOiJSUzI1NiIsImtpZCI6Im80UUVQWFp4Yk40eXN2a2xpby1PdTVkZFJaWSIsIng1dCI6Im80UUVQWFp4Yk40eXN2a2xpby1PdTVkZFJaWSIsInR5cCI6IkpXVCJ9.eyJib3QiOiJDTFUtUU5BLWJvdCIsInNpdGUiOiJERTMxa3ZHMWhoTUx5RGwxQTlUaUJwU1NOYjZUOHdiaVZlWEV4UExpZEpIWDFoVmlJYXhhSlFRSjk5QkRBQ0w5M05hQUFyb2hBQUFCQVpCUzRVRU0iLCJjb252IjoiSWFueWV4Wmcwa3NCZ1Q1Vk9OTGtiZi1pbiIsIm5iZiI6MTc0NDUyMTIwOSwiZXhwIjoxNzQ0NTI0ODA5LCJpc3MiOiJodHRwczovL3dlYmNoYXQuYm90ZnJhbWV3b3JrLmNvbS8iLCJhdWQiOiJodHRwczovL3dlYmNoYXQuYm90ZnJhbWV3b3JrLmNvbS8ifQ.ZXbtrGafjfYo6ETacrY5CwYm14fTuoOSR_F6fwwCaYHd16k8fpfbKSSyljqZXstbE31cdjGzF8WFgllZr1tqzWZkmKYKAh8vVwT2Vi22ja2DfxOg7vohKQf8tXFYUHGRVBntmlb_6oA-00YTLb7eubGxuqiLYnijTi8-hdDd7E0uZDgJJBiVkjxyZTnOxBsTQsdKktHUe1Q3ldZ4n_6ZYuBUmmkqrLGqKau60BCMWl_02Xau9tffQtlKYVTYW-xQ-8P_Um5P1gvgboFZPAlE-rbnaEJyr2Rans8r480xL5X-NAf8hZ8hYnK7eSY-5dI0YQUZLRbsKZMykDY7YoqS5g' // Replace with fresh token
         }),
         userID: 'user-' + Math.random().toString(36).substr(2, 9),
         username: 'Web User',
-        locale: 'en-US'
+        locale: 'en-US',
+        styleOptions: {
+          // User (you) bubble colors
+          bubbleBackground: '#0078D4', // Bright blue
+          bubbleTextColor: '#FFFFFF', // White text
+          bubbleBorderRadius: 10, // Rounded corners
+          // Bot bubble colors
+          bubbleFromUserBackground: '#28A745', // Vibrant green
+          bubbleFromUserTextColor: '#FFFFFF', // White text
+          bubbleFromUserBorderRadius: 10,
+          // Avatars
+          botAvatarBackgroundColor: '#28A745', // Green for bot
+          userAvatarBackgroundColor: '#0078D4', // Blue for user
+          botAvatarInitials: 'Bot',
+          userAvatarInitials: 'Me',
+          // Send box
+          sendBoxBackground: '#F5F5F5', // Light gray
+          sendBoxButtonColor: '#DC3545', // Red send button
+          sendBoxBorderTop: '1px solid #6F42C1', // Purple accent
+          // Timestamp
+          timestampColor: '#6F42C1' // Purple
+        }
       },
       document.getElementById('webchat')
     );
